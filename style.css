@@ -1,0 +1,26 @@
+* {
+    background-color: #444444;
+    color: white;
+   
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.start-quiz-btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.hide {
+    display: none;
+}
