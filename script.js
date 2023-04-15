@@ -119,7 +119,7 @@ function submitScore() {
     score: timeLeft,
   };
   savedScores.push(scoreObj);
-  localStorage.setItem("", JSON.stringify(savedScores));
+  localStorage.setItem("scores", JSON.stringify(savedScores));
 }
 
 function displayScores() {}
