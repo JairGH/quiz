@@ -5,40 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
-
-
-    <section class="main-page">
-      <div class="title"><h1>Coding Quiz Challenge</h1></div>
-      <div class="box-info">
-        <p>
-          Try to answer the following code-related questions within the time
-          limit. <br />
-          Keep Keep in mind the incorrect answers will be penalized your score
-          time by 10 seconds!
-        </p>
-        \
-      </div>
-      <div id="start_quiz_btn"><button>Start</button></div>
-    </section>
-
-
+    <div id="startScreen">
+      <h1>My Quiz</h1>
+      <p>
+        Try to answer the following code-related questions within the time
+        limit. <br />
+        Keep Keep in mind the incorrect answers will be penalized your score
+        time by 10 seconds!
+      </p>
+      <button id="startQuiz">Star Quiz!</button>
+    </div>
 
     <!-- Quiz box section -->
-    <container class="quiz_box">
-      <header class="hide" id="gameScreen">
-        <h2 id="startScreen">Quiz Title</h2>
-        <button id="1">MM</button>
-        <button id="2">MM</button>
-        <button id="3">MM</button>
-        <button id="4">MM</button>
-      </header>
-   
 
+    <div id="gameScreen" class="hide">
+      <h2 id="question">Quiz Title</h2>
+      <button id="ans1">WEQFQW</button>
+      <button id="ans2">fweFWEFD</button>
+      <button id="ans3">EWF WFE</button>
+      <button id="ans4">fweFWEF</button>
+      <p id="feedBack"></p>
+    </div>
+    <div id="endScreen" class="hide">
+      <h2>Game Over!</h2>
+      <input type="text" id="initials">
+      <button>Submit</button>
+    </div>
     <!-- Result box section -->
-   
+    <div id=""></div>
 
     <script src="script.js"></script>
   </body>
