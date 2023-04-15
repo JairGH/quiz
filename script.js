@@ -129,4 +129,4 @@ ans1.addEventListener("click", checkAnswer);
 ans2.addEventListener("click", checkAnswer);
 ans3.addEventListener("click", checkAnswer);
 ans4.addEventListener("click", checkAnswer);
-submitInitials.addEventListener("click", submitScore);
+// submitInitials.addEventListener("click", submitScore);
