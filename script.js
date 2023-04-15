@@ -1,5 +1,3 @@
-// const startQuiz = document.querySelector(".start_quiz")
-
 function byId(id) {
   return document.getElementById(id);
 }
@@ -63,7 +61,7 @@ var questions = [
     ans2: "terminal / bash",
     ans3: "for logos",
     ans4: "console.log",
-    correct: "console.log"
+    correct: "console.log",
   },
 ];
 
@@ -81,7 +79,7 @@ function displayQuestion() {
 
   if (!currentQuestion) {
     endQuiz();
-    return
+    return;
   }
 
   question.textContent = currentQuestion.question;
@@ -125,29 +123,27 @@ function submitScore() {
   savedScores.push(scoreObj);
 
   localStorage.setItem("scores", JSON.stringify(savedScores));
-  endScreen.classList.toggle("hide")
+  endScreen.classList.toggle("hide");
   displayScores();
-} 
-
+}
 
 function displayScores() {
   highScoresScreen.classList.toggle("hide");
 
-  var savedScores =
-    JSON.parse(localStorage.getItem("scores")) || [];
+  var savedScores = JSON.parse(localStorage.getItem("scores")) || [];
   savedScores.sort(function (a, b) {
-    return b.score - question.score
+    return b.score - question.score;
   });
-  
+
   for (let i = 0; i < savedScores.length; i++) {
     const score = array[i];
-    let li = document.createElement("li")
+    let li = document.createElement("li");
     li.textContent = scoreObj.name = ": " + scoreObj.score;
     highScores.append(li);
   }
 }
 
-  startBtn.addEventListener("click", startQuiz);
+startBtn.addEventListener("click", startQuiz);
 ans1.addEventListener("click", checkAnswer);
 ans2.addEventListener("click", checkAnswer);
 ans3.addEventListener("click", checkAnswer);
