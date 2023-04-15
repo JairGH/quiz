@@ -17,6 +17,9 @@ var ans5 = byId("ans5");
 var feedBack = byId("feedBack");
 var endScreen = byId("endScreen");
 var submitInitials = byId("submitInitials");
+var initials = byId("initials");
+var highScoresScreen = byId("highScoresScreen");
+var highScores = byId("highScores");
 
 var questionIndex = 0;
 var questions = [
@@ -65,8 +68,8 @@ var questions = [
 ];
 
 function startQuiz() {
-  startScreen.classList.toggle("hide");
-  gameScreen.classList.toggle("hide");
+  startScreen.classList.add("hide");
+  gameScreen.classList.remove("hide");
 
   displayQuestion();
 }
@@ -109,22 +112,42 @@ function checkAnswer(event) {
     feedBack.textContent = "";
     feedBack.style.backgroundColor = "";
     questionIndex++;
-  }, 1000);
+    displayQuestion();
+  }, 1300);
 }
 
 function submitScore() {
-  var savedScores = JSON.parse(localStorage.getItem("scores")) || []
+  var savedScores = JSON.parse(localStorage.getItem("scores")) || [];
   var scoreObj = {
-    name: submitInitials.ariaValueMax,
+    name: submitInitials.value,
     score: timeLeft,
   };
   savedScores.push(scoreObj);
+
   localStorage.setItem("scores", JSON.stringify(savedScores));
+  endScreen.classList.toggle("hide")
+  displayScores();
+} 
+
+
+function displayScores() {
+  highScoresScreen.classList.toggle("hide");
+
+  var savedScores =
+    JSON.parse(localStorage.getItem("scores")) || [];
+  savedScores.sort(function (a, b) {
+    return b.score - question.score
+  });
+  
+  for (let i = 0; i < savedScores.length; i++) {
+    const score = array[i];
+    let li = document.createElement("li")
+    li.textContent = scoreObj.name = ": " + scoreObj.score;
+    highScores.append(li);
+  }
 }
 
-function displayScores() {}
-
-startBtn.addEventListener("click", startQuiz);
+  startBtn.addEventListener("click", startQuiz);
 ans1.addEventListener("click", checkAnswer);
 ans2.addEventListener("click", checkAnswer);
 ans3.addEventListener("click", checkAnswer);
